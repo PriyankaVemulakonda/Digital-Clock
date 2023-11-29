@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+body,.time,.left-side,.right-side,.right-top,.right-bottom{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+body{
+   min-height:80vh;
+   background-color: rgb(225, 216, 205);
+}
+.digital-clock{
+    color:fff;
+    padding:20px 45px;
+    width:425px;
+    border-color: rgb(3, 3, 3);
+    background: #2d2f38;
+    box-shadow:0 5px 25px  rgb(102, 145, 139);
+    border-radius: 10px;
+}
+.digital-clock ,.time{
+    position: relative;
+
+}
+#hours{
+    font-weight:600px;
+    padding:0 10px;
+    line-height: 125px;
+    font-size:8em;
+    background: -webkit-linear-gradient(90deg,white,yellow);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+.right-side{
+    flex-direction: column;
+
+}
+
+#dots{
+    font-size: 4em;
+    transform: translateY(-3px);
+
+}
+#minutes{
+    font-weight:500;
+    font-size:6em;
+    margin-left:10px;
+    background: -webkit-linear-gradient(90deg,white,purple);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.right-bottom{
+    margin-left:10px;
+    transform:translateY(-20px);
+}
+#periods,#seconds{
+    font-size:1.8em;
+    font-weight:500;
+    margin-left: 10px;
+}
+#periods{
+    color:rgb(173, 59, 57);
+
+}
+#seconds{
+    background: -webkit-linear-gradient(90deg,white,rgb(111, 216, 111));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.digital-clock::before{
+    content:'';
+    position: absolute;
+    background: linear-gradient(45deg,red,green,blue);
+    background-size:200% 200%;
+    top:-5px; 
+    left:-5px;
+    z-index:-1;
+    filter: blur(30px);
+    animation:glowing 5s ease infinite;
+}
+@keyframes glowing{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
